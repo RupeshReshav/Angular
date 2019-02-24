@@ -1,0 +1,37 @@
+﻿
+<br />
+<h3>Hello {{name}}</h3>
+<table>
+    <thead>
+        <tr>
+            <th attr.colspan={{columnspan}}>
+                Employee
+            </th>
+        </tr>
+    </thead>
+    <tbody [class]="classToApply">
+        <tr>
+            <td style="border: 1px solid red">Name</td>
+            <td><input [(ngModel)]="name" /></td>
+
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>{{address}}</td>
+        </tr>
+        <tr *ngIf="showDetails">
+            <td>Phone Number</td>
+            <td>{{number}}</td>
+        </tr>
+        <tr *ngIf="showDetails">
+            <td>Age</td>
+            <td>{{age}}</td>
+        </tr>
+    </tbody>
+
+</table>
+
+<br />
+<button (click)="toggleDetails()">
+    {{showDetails? 'Hide': 'Show' }} Details
+</button>
